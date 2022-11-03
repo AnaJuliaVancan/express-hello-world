@@ -9,6 +9,52 @@ app.get('/req', (req, res) => {
     res.send('Yo!')
 })
 
+app.get('/meunome', (req, res) => {
+    console.log("Meu nome é Ana Júlia Benedito Vançan")
+    res.send('Meu nome é Ana Júlia Benedito Vançan')
+})
+
+app.get('/tico', (req, res) => {
+    console.log("teco")
+    res.send('teco')
+})
+
+app.get('/pokemons', (req, res) => {
+    console.log("pokemom")
+  const pokemon = [{id:1,
+               nome: "Pikachu"},
+             {id:2,
+               nome: "Butterfree"},
+              {id:3,
+               nome: "Pidgeot"},
+              {id:4,
+               nome: "Charizard"},
+              {id:5,
+               nome: "Bulbasaur"},
+              {id:6,
+               nome: "Squirtle"},
+              {id:7,
+               nome: "Kingler"},
+              {id:8,
+               nome: "Tauros"},
+              {id:9,
+               nome: "Muk"},
+              {id:10,
+               nome: "Primeape"}]
+    res.json(pokemon)
+})
+
+app.get('/series', (req, res) => {
+    console.log("serie")
+  const seri = [{id:1,
+               nome: "Anne com E"},
+             {id:2,
+               nome: "One Piece"},
+              {id:3,
+               nome: "Jojo"}]
+    res.json(seri)
+})
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 

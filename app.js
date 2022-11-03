@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
 
+app.use(express.json())
+app.use(express.urlencoded({extended: true}));
+
 app.get("/", (req, res) => res.type('html').send(html));
 
 app.get('/req', (req, res) => {
@@ -44,15 +47,9 @@ app.get('/pokemons', (req, res) => {
     res.json(pokemon)
 })
 
-app.get('/series', (req, res) => {
-    console.log("serie")
-  const seri = [{id:1,
-               nome: "Anne com E"},
-             {id:2,
-               nome: "One Piece"},
-              {id:3,
-               nome: "Jojo"}]
-    res.json(seri)
+app.post('/series', (req, res) =>{
+  var series = req.body
+  res.json(series)
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
